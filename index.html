@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="expires" content="0" />
+      <title> Hari Srinivasan</title>
+
+      <!--- load in the style.css-->
+      <link rel="stylesheet" type="text/css" href="pub/style.css">
+   </head>
+   <body onload="typeName()">
+        <div class="Name">
+            <h2> Hi, my name is</h2>
+            <h1 class="fullName"></h1>
+        </div>
+         
+        <div class="nav">
+            <button onclick="displayPopout(event)" id="aboutMe">About Me</button>
+            <button onclick="displayPopout(event)" id="projects">My Projects</button>
+            <button onclick="displayPopout(event)" id="contactMe">Contact Me</button>
+        </div>
+        <div id="wrapperAboutMe">
+            <div id="aboutMePopOut">
+                <div class="popoutNav">
+                    <H2>About Me</H2>
+                    <button onclick="closePopout(event)" id="closeAboutMe">x</button>
+                </div>
+                <div id="contentBox">
+                    <div id="intro" class="box">
+                        <H2 class="subTitle">Introduction</H2>
+                        <p>
+                            My name is Hari Srinivasan and I am 23 years old. 
+                            I graduated from the University of Toronto in April of 2022 specalizing in Computer Science. 
+                            During my time at UofT, I took a variety of computer science courses ranging from web developement to parallel computing. 
+                            Through these courses I have done 10+ project which have helped me broaden and solidify my knowledge in the field of computer science. 
+                            If you are interested and want to learn more about these projects, please click <a onclick="redirectToProjects()"> here</a>. 
+                        </p>
+                    </div>
+                    <div id="education" class="box">
+                        <H2 class="subTitle">Education</H2>
+                        <div class="studyPeriod">
+                            <p><b>University of Toronto</b></p>       
+                            <p><b>September 2017 – April 2022</b></p>
+                        </div>
+                        <ul>
+                            <li>Honours Bachelor of Science with Distinction / Computer Science Specialist </li>
+                        </ul>
+                    </div>
+                    <div id="Courses" class="box">
+                        <div>
+                            <H2 class="subTitle">Relevant Courses</H2>
+                        </div>
+                        <div id="courseContent" class="box">
+                            <ul>
+                                <li>Algorithm Design and Analysis</li>
+                                <li>Calculus of Several Variables</li>
+                                <li>Capstone Design</li>
+                                <li>Computer Organization</li>
+                                <li>Computer Security</li>
+                                <li>Computational Complexity and Computability</li>
+                                <li>Data Structures and Analysis</li>
+                                <li>Introduction to Databases</li>
+                                <li>Introduction to Information Security</li>
+                                <li>Introduction to Software Engineering</li>
+                                <li>Introduction to the Theory of Computation</li>
+                                <li>Linear Algebra I</li>
+                                <li>Parallel Programming</li> 
+                                <li>Principles of Computer Networks</li>
+                                <li>Programming on the Web</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="courseContent-Cont" class="box">
+                        <ul>
+                            <li>Software Design</li>
+                            <li>Software Tools and Systems Programming</li>
+                            <li>Spatial Data Science</li>
+                            <li>Operating Systems</li>
+                        </ul>
+                    </div>
+                    <div id="Awards" class="box listStyle">
+                        <h2 class="subTitle">Awards</h2>
+                        <h3> 1. Honour Roll </h3>
+                        <ul>
+                            <li>Recognized for obtaining a grade of 90% or greater in three or more Mathematical 
+                                and Computational Science courses taken at the University of Toronto from September 2021 to April 2022.
+                            </li>
+                        </ul>
+                        <h3> 2. UX/UI Student Competition</h3>
+                        <ul>
+                            <li>Second place at student design competition for developing Dually Noted, musical education prototype app. </li>
+                        </ul>
+                    </div>
+                    <div class="skills listStyle">
+                        <h2 class="subTitle">Skills</h2>
+                        <h3> Languages: </h3>
+                        <ul class="listStyle-Compact">
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>C/C++</li>
+                            <li>HTML/CSS/Javascript</li>
+                            <li>R</li>
+                            <li>Bash Scripting</li>
+                        </ul>
+                        <h3>Databases:</h3>
+                        <ul>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB/MongoDB Atlas</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+                    <div class="skills listStyle">
+                        <h3>Parallel Programming & Operating Systems:</h3>
+                        <ul>
+                            <li>CUDA</li>
+                            <li>Debugging Tools such as Valgrind, GDB, Callgrind</li>
+                        </ul>
+                        <h3>Web Developement:</h3>
+                        <ul>
+                            <li>Postman</li>
+                            <li>MERN Stack</li>
+                            <li>Heroku</li>
+                        </ul>
+                        <h3>Cyber Security:</h3>
+                            <ul class="listStyle-Compact">
+                                <li>Metasploit</li>
+                                <li>Nmap</li>
+                                <li>Hashcat</li>
+                                <li>John the Ripper</li>
+                                <li>Wireshark</li>
+                                <li>VMware Workstation</li>
+                                <li>CIA</li>
+                            </ul>
+                        <h3>Other:</h3>
+                        <ul>
+                            <li>Google Earth Engine</li>
+                            <li>Git</li>
+                            <li>Terminal Bash</li>
+                            <li>Jira</li>
+                            <li>Figma</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="wrapperMyProject">
+            <div id="myProjectPopOut">
+                <div class="popoutNav">
+                    <h2 id="myProjectTitle"> My Projects</h2>
+                    <div id="filter">
+                        <!-- <label for="projectCategory">Filter Projects:</label> -->
+                        <select name="projectCategory" id="projectCategory" onchange="filterProjects(this)">
+                            <option value="All Projects">All Projects</option>
+                            <option value="OS & Parallel Programming">OS & Parallel Programming</option>
+                            <option value="Web Developement">Web Developement</option>
+                            <option value="Cyber Security">Cyber Security</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <button onclick="closePopout(event)" id="closeMyProject">x</button>
+                </div>
+                <div id="contentDiv">
+                    <div id="backNav">
+                        <button onclick="displayPreProject()"  id="backButton">&#10094;</button>
+                    </div>
+                    <div id="projectDiv">
+                        <div class="projectContent">
+                            <div class="projectTitle">
+                                <h2>Portfolio</h2>
+                                <h3>September 2022</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <p>
+                                    You are looking at it! <br>
+                                    A personal website to display my skills, projects and contact details.
+                                </p>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>Vanilla JavaScript</li>
+                                    <li>Git</li>
+                                </ul> 
+                            </div>
+                        </div>
+        
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>NBA Statistics Web Scaper</h2>
+                                <h3>August 2022</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <ul>
+                                    <li>Created a Python script to scrape NBA players’ career statistics and NBA teams’ statistics from basketball-reference.com.</li>
+                                    <li>HTML pages were retreived from the website and was then parsed using Beautiful Soup to get the data.</li>
+                                    <li>The scraped data was cleaned by removing duplicate records and adding in any missing values.</li>
+                                    <li>Export the cleaned data to csv and excel files using Pandas.</li>
+                                </ul>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>Python</li>
+                                    <li>Pandas</li>
+                                    <li>Beautiful Soup</li>
+                                </ul> 
+                            </div>
+                        </div>
+        
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>OSPF and RIP Routing Protocols</h2>
+                                <h3>March 2022</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <ul>
+                                    <li>Implemented two routers using different routing protocols (OSPF and RIP).</li>
+                                    <li>Compared and analyzed the performances of the routers in different network topologies using MiniNet.</li>
+                                    <li>Created a formal report documenting the implementation, design decisions, testing environment and performance of the routers.</li>
+                                </ul>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>Python</li>
+                                    <li>Git</li>
+                                </ul> 
+                            </div>
+                        </div>
+        
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>Penetration Testing with Metasploit</h2>
+                                <h3>March 2022</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <ul>
+                                    <li>Using Metasploit and Nmap, tested and determined the Samba and MySQL servers running on a machine were vulnerable.</li>
+                                    <li>
+                                        Using Metasploit, determined the Samba server can be used to create a remote root shell on the machine and 
+                                        the MySQL server can be used to gain MySQL database login credentials.
+                                    </li>
+                                    <li>
+                                        Generated a formal penetration test report highlighting the results of the penetration testing, 
+                                        the vulnerabilities, the impact of the vulnerabilities (CIA), and recommendations for fixing the vulnerabilities.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>Metasploit</li>
+                                    <li>Nmap</li>
+                                    <li>MySQL</li>
+                                    <li>Samba Servers</li>
+                                </ul> 
+                            </div>
+                        </div>
+        
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>Image processing using CUDA</h2>
+                                <h3>December 2021</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <ul>
+                                    <li>Implemented Laplacian filter kernels on the GPU using CUDA.</li>
+                                    <li>Each kernel applied a 3x3 discrete Laplacian filter to a given image to produce a new image.</li>
+                                    <li>Each kernel had a different mode of execution, such as horizontal sharding, column major, row major and strided access.</li>
+                                    <li>Documented and analyzed the performance, such as the kernel runtime, transfer times to/from the GPU and the speedup of the kernel against a CPU implementation, of each kernel.</li>
+                                </ul>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>C</li>
+                                    <li>CUDA</li>
+                                    <li>Python</li>
+                                    <li>Git</li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>Shared Memory and Message Passing</h2>
+                                <h3>November 2021</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <ul>
+                                    <li>Implemented different database join operation algorithms, such as nest-loop, sort-merge, and hash join, in parallel using OpenMP and MPI.</li>
+                                    <li>Optimized MPI implementations for both distributed/clustered and shared memory systems.</li>
+                                    <li>Analyzed and documented the performance of different join techniques.</li>
+                                </ul>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>C</li>
+                                    <li>Python</li>
+                                    <li>Git</li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>System Security Analysis</h2>
+                                <h3>October 2021</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <ul>
+                                    <li>
+                                        Given a compromised machine, determined how the attacker gained access to the system, what files were accessed by the attacker, 
+                                        what changes were made to the system by the attacker and the goal of the changes.
+                                    </li>
+                                    <li>Analyzed systems log files and encrypted files using John the Ripper to determine compromised system accounts and services.</li>
+                                    <li>Generated a report documenting the findings and the supporting evidence.</li>
+                                </ul>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>John the Ripper</li>
+                                    <li>Terminal Bash</li>
+                                    <li>CIA</li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>System Performance Experiment</h2>
+                                <h3>September 2021</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <ul>
+                                    <li>Designed various experiments to learning about the limitations of system memory performance of the computers at University of Toronto computer science labs.</li>
+                                    <li>The experiments were used to measure the memory write bandwidth, the number of levels in the CPU cache hierarchy, 
+                                        measure cache sizes, cache (write) latencies for each level, and the write latency of main memory.</li>
+                                </ul>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>C</li>
+                                    <li>Python</li>
+                                    <li>Git</li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>Correlation and Regression Analysis</h2>
+                                <h3>July 2021</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <ul>
+                                    <li>Aggregated 160 countries’ 2019 and 2015 statistics on happiness score, 
+                                        GDP per capita, social support, life expectancy, perceived freedom, perceived generosity, and perceived government corruption.</li>
+                                    <li>Analysed Pearson correlation between Countries happiness score and life expectancy, and the covariance between a country’s happiness score and social support.</li>
+                                    <li>Explored the relationship between the happiness score and GDP per capita by region (e.g., North America, Eastern Asia, Western Europe, etc.).</li>
+                                    <li>Created a bivariate regression model for the happiness score and GDP per capita, and a multivariate regression model for the happiness score and the six independent variables.</li>
+                                    <li>Created a report documenting the analysis.</li>
+                                </ul>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>R</li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>QuizBox</h2>
+                                <h3>April 2021</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <ul>
+                                    <li>Developed a front-end JavaScript Library that allowed developers to create online quizzes. </li>
+                                    <li>The library provides different types of question templates and animations that occurs when transitioning between questions.</li>
+                                    <li>Deployed a <a href="https://quiz-box.herokuapp.com/">website</a> containing documentation to the library</li>
+                                </ul>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>Vanilla JavaScript</li>
+                                    <li>Heroku</li>
+                                    <li>Git</li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>Resumable</h2>
+                                <h3>April 2021</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <ul>
+                                    <li>Created a <a href="https://theresumable.herokuapp.com/">website</a> that allowed users upload and share their resumes and cover letters with other users and receive feedback.</li>
+                                    <li>Users can browse through resumes and cover letters belonging to other user, highlight sections of the document and leave a comment.</li>
+                                    <li>Created an admin dashboard where admins can remove comments/feedback on resumes and cover letters, ban users, and remove resumes and cover letters.</li>
+                                </ul>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>MongoDB</li>
+                                    <li>Express.js</li>
+                                    <li>React.js</li>
+                                    <li>Node.js</li>
+                                    <li>MERN Stack</li>
+                                    <li>Git</li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>Assembee</h2>
+                                <h3>December 2020</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <ul>
+                                    <li>Developed an android app to help users find group members to work on personal project.</li>
+                                    <li>Rather than matching users with other users, the app was created
+                                        to match users with projects.</li>
+                                    <li>Before developing the android app, created high-fidelity protype and conducted a usability test.</li>
+                                </ul>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>Android Studio</li>
+                                    <li>Java</li>
+                                    <li>Figma</li>
+                                    <li>Git</li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>Dually Noted</h2>
+                                <h3>June 2020</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <ul>
+                                    <li>Developed high-fidelity protype music education app that allows students and their teachers to collaborate.</li>
+                                    <li>Conducted usability test with students and refined high-fidelity protype.</li>
+                                </ul>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>Figma</li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="projectContent-hidden">
+                            <div class="projectTitle">
+                                <h2>Ext2 File System</h2>
+                                <h3>December 2019</h3>
+                            </div>
+                            <div class="descriptionDiv">
+                                <h3>Description:</h3> 
+                                <p>
+                                   Implemented Ext2 file system operations such as mkdir, cp, rm and ln, to modify ext2-format virtual disks.
+                                </p>
+                            </div>
+                            <div class="tagsDiv"> 
+                                <ul class="tags">
+                                    <li>C</li>
+                                    <li>Git</li>
+                                </ul> 
+                            </div>
+                        </div>
+                    </div>
+                    <div id="nextNav">
+                        <button onclick="displayNextProject()" id="nextButton">&#10095;</button>
+                    </div>
+                </div>
+                <div id="numProjects">
+                    <span onclick="selectProject(event)" class="currentProjectIndicator" id="1"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="2"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="3"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="4"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="5"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="6"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="7"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="8"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="9"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="10"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="11"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="12"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="13"></span>
+                    <span onclick="selectProject(event)" class="projectIndicator" id="14"></span>
+                </div>
+            </div>
+        </div>
+        <div id="wrapperContactMe" >
+            <div id="contactMePopout">
+                <div class="popoutNav">
+                    <H2>Contact Me</H2>
+                    <button onclick="closePopout(event)" id="closeContactMe">x</button>
+                </div>
+                <div>
+                    <div id="contactDetails">
+                        <p>
+                            <b>Primary Email:</b> hari.srinivasan@mail.utoronto.ca
+                            <br>
+                            <b>Secondary Email:</b> harisrinivasan1@yahoo.com
+                        </p>
+                    </div>
+                    <div id="links">
+                        <a href="https://github.com/HariSrinivasan14" target="_blank" rel="noopener noreferrer"><img class="images" src="pub/Images/github.png"></a>
+                        <a href="https://www.linkedin.com/in/hari-srinivasan-59a132238/" target="_blank" rel="noopener noreferrer"><img class="images" src="pub/Images/linkedln.png"></a>
+                    </div>
+                </div> 
+            </div>
+        </div>        
+   </body>
+   <script type="text/javascript" src="pub/script.js"></script>
+</html>
