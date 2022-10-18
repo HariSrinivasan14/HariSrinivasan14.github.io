@@ -37,7 +37,6 @@ body{
 .nav button {
 	margin-right: 0px;
     margin-left: 7%;
-    /* margin-left: 300px; */
 	font-weight: bold;
 	list-style: none; 
 	text-align: center;
@@ -126,7 +125,7 @@ body{
     right: 0;
     background-color: rgba(46, 48, 51, 0.308);
     visibility: visible;
-    min-width: 1700px;
+    min-width: 1550px;
     min-height: 800px;
     height: 100%;
     display: none;
@@ -192,9 +191,8 @@ body{
 }
 
 #courseContent{
-    /* height: 340px; */
     height: 270px;
-    width: 300px;
+    width: 100%;
     font-size: 17px;
     padding: 10px;
     padding-top: 0px;
@@ -326,8 +324,8 @@ body{
     right: 0;
     background-color: rgba(46, 48, 51, 0.308);
     visibility: visible;
-    min-width: 1700px;
-    min-height: 800px;
+    min-width: 1100px;
+    min-height: 750px;
     height: 100%;
     display: none;
 }
