@@ -338,9 +338,9 @@ body{
     position: absolute; 
     left: 50%;
     top: 50%;
-    width: 1500px;
-    min-width: 1500px; 
-    height: 790px; /* Full height */
+    width: 1100px;
+    min-width: 1100px; 
+    height: 730px; /* Full height */
     max-width: 80%; 
     background-color: white;
     transform: translate(-50%, -50%);
@@ -405,7 +405,7 @@ body{
 }
 
 #numProjects{
-    padding-top: 10px;
+    padding-top: 30px;
     margin-top: 20px;
     width: 100%;
     align-items: flex-end;
@@ -446,7 +446,7 @@ body{
 #backNav{
     align-items: center;
     float: left;
-    margin-left: 130px;
+    margin-left: 40px;
     height: 90%;
     display: flex;
     align-items: center;
@@ -525,7 +525,7 @@ body{
 
 #nextNav{
     align-items: center;
-    margin-right: 130px;
+    margin-right: 40px;
     height: 90%;
     display: flex;
     align-items: center;
